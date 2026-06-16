@@ -12,9 +12,10 @@ interface PuzzleListItem {
 
 interface Props {
   onPuzzleSelect: (puzzle: Puzzle | null) => void;
+  onDateSelect: (date: string) => void;
 }
 
-export default function PuzzleCalendar({ onPuzzleSelect }: Props) {
+export default function PuzzleCalendar({ onPuzzleSelect, onDateSelect }: Props) {
   const [open, setOpen] = useState(false);
   const [puzzles, setPuzzles] = useState<PuzzleListItem[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
@@ -45,9 +46,10 @@ export default function PuzzleCalendar({ onPuzzleSelect }: Props) {
   );
 
   async function handleDateClick(date: Date) {
-    const formatted = date.toLocaleDateString('en-CA'); // YYYY-MM-DD
+    const formatted = date.toLocaleDateString('en-CA');
     const { data } = await supabase.rpc('get_puzzle_by_date', { p_date: formatted });
     onPuzzleSelect(data ?? null);
+    onDateSelect(formatted);
     setSelectedDate(date);
     setOpen(false);
   }

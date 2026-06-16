@@ -4,9 +4,10 @@ import type { Puzzle } from '../../types/puzzle';
 
 interface Props {
   onCreated: (puzzle: Puzzle) => void;
+  publishDate: string;
 }
 
-export default function CreatePuzzle({ onCreated }: Props) {
+export default function CreatePuzzle({ onCreated, publishDate }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -14,10 +15,9 @@ export default function CreatePuzzle({ onCreated }: Props) {
     setLoading(true);
     setError('');
 
-    const today = new Date().toLocaleDateString('en-CA');
     const { data: id, error } = await supabase.rpc('create_puzzle', {
       p_theme: '',
-      p_publish_date: today,
+      p_publish_date: publishDate,
     });
 
     if (error) {

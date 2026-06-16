@@ -1,0 +1,163 @@
+:root {
+  --text: #374151;
+  --text-h: #111827;
+  --bg: #f9fafb;
+  --border: #e5e7eb;
+  --code-bg: #f3f4f6;
+  --accent: #1d6a96;
+  --accent-bg: rgba(29, 106, 150, 0.08);
+  --accent-border: rgba(29, 106, 150, 0.4);
+  --social-bg: rgba(240, 247, 253, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #3a9fd5;
+    --accent-bg: rgba(58, 159, 213, 0.15);
+    --accent-border: rgba(58, 159, 213, 0.5);
+    --social-bg: rgba(30, 50, 70, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+.react-calendar {
+  color: #000;
+}
+
+.react-calendar button {
+  color: #000;
+}
+
+.puzzle-grid {
+  display: grid;
+  gap: 12px;
+  grid-auto-rows: 150px;
+  grid-template-columns: repeat(2, 150px);
+}
+
+.puzzle-grid .option-box {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 600px) {
+  .puzzle-grid {
+    gap: 16px;
+    grid-auto-rows: 200px;
+  }
+  .puzzle-grid.cols-1 { grid-template-columns: repeat(1, 200px); }
+  .puzzle-grid.cols-2 { grid-template-columns: repeat(2, 200px); }
+  .puzzle-grid.cols-3 { grid-template-columns: repeat(3, 200px); }
+}
+
+@media (min-width: 900px) {
+  .puzzle-grid {
+    grid-auto-rows: 250px;
+  }
+  .puzzle-grid.cols-1 { grid-template-columns: repeat(1, 250px); }
+  .puzzle-grid.cols-2 { grid-template-columns: repeat(2, 250px); }
+  .puzzle-grid.cols-3 { grid-template-columns: repeat(3, 250px); }
+}
+
+.puzzle-date-has abbr {
+  background: #22c55e;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+.puzzle-date-missing abbr {
+  background: #ef4444;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+}

@@ -17,14 +17,12 @@ export default function Home() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', position: 'relative' }}>
-      <div style={{ position: 'absolute', top: 16, left: 24, fontSize: 28, fontWeight: 700, letterSpacing: '-0.5px' }}>
-        oddpokdle
-      </div>
-      <div style={{ position: 'absolute', top: 16, right: 16 }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 16px 0' }}>
+        <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.5px' }}>oddpokdle</div>
         <Profile streak={streak} />
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
         <Puzzle onSolve={handleSolve} />
       </div>
       <footer style={{ textAlign: 'center', padding: '16px 24px', fontSize: 12, color: '#9ca3af' }}>

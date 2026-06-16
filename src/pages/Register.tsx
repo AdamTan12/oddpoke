@@ -15,6 +15,10 @@ export default function Register() {
     });
   }, []);
 
+  async function handleGoogle() {
+    await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin } });
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError('');
@@ -32,6 +36,18 @@ export default function Register() {
         <div style={{ textAlign: 'center' }}>
           <h1 style={{ margin: '0 0 4px', fontSize: 32 }}>oddpokdle</h1>
           <p style={{ margin: 0, color: '#6b6375' }}>Create an account to track your streak</p>
+        </div>
+        <button
+          onClick={handleGoogle}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, padding: '11px', borderRadius: 8, border: '1.5px solid #e5e4e7', background: '#fff', color: '#111', fontSize: 15, fontWeight: 500, cursor: 'pointer', width: '100%' }}
+        >
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width={18} height={18} />
+          Continue with Google
+        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div style={{ flex: 1, height: 1, background: '#e5e4e7' }} />
+          <span style={{ fontSize: 13, color: '#9ca3af' }}>or</span>
+          <div style={{ flex: 1, height: 1, background: '#e5e4e7' }} />
         </div>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>

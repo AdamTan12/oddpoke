@@ -33,6 +33,7 @@ export default function Theme({ puzzle }: Props) {
         type="text"
         value={theme}
         onChange={e => setTheme(e.target.value)}
+        style={{ width: 400 }}
       />
       <button onClick={handleSave} disabled={saving}>
         {saving ? 'Saving...' : 'Save'}

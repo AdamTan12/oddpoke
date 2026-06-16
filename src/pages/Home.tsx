@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div style={{ minHeight: '100vh', position: 'relative' }}>
-      <div style={{ position: 'absolute', top: 28, left: 24, fontSize: 28, fontWeight: 700, letterSpacing: '-0.5px' }}>
+      <div style={{ position: 'absolute', top: 16, left: 24, fontSize: 28, fontWeight: 700, letterSpacing: '-0.5px' }}>
         oddpokdle
       </div>
       <div style={{ position: 'absolute', top: 16, right: 16 }}>

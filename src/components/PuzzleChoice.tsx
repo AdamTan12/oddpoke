@@ -31,7 +31,7 @@ export default function PuzzleChoice({ choice, onSelect, onRefresh }: Props) {
   }
 
   return (
-    <div style={{ border: '2px solid #000', borderRadius: 8, padding: 8, display: 'inline-flex', flexDirection: 'column', alignItems: 'center', width: 250, height: 250, boxSizing: 'border-box', overflow: 'hidden' }}>
+    <div style={{ border: '2px solid var(--border)', borderRadius: 8, padding: 8, display: 'inline-flex', flexDirection: 'column', alignItems: 'center', width: 250, height: 250, boxSizing: 'border-box', overflow: 'hidden' }}>
       {pickerOpen ? (
         <PokemonList onSelect={handleSelect} onCancel={() => setPickerOpen(false)} />
       ) : (

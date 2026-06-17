@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Puzzle from '../components/Puzzle';
 import Profile from '../components/Profile';
+import ThemeToggle from '../components/ThemeToggle';
 import { supabase } from '../lib/supabase';
 
 export default function Home() {
@@ -20,12 +21,15 @@ export default function Home() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 16px 0' }}>
         <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.5px' }}>oddpokdle</div>
-        <Profile streak={streak} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <ThemeToggle />
+          <Profile streak={streak} />
+        </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
         <Puzzle onSolve={handleSolve} />
       </div>
-      <footer style={{ textAlign: 'center', padding: '16px 24px', fontSize: 12, color: '#9ca3af' }}>
+      <footer style={{ textAlign: 'center', padding: '16px 24px', fontSize: 12, color: 'var(--text-subtle)' }}>
         oddpokdle is an unofficial fan project and is not affiliated with, endorsed by, or connected to Nintendo, Game Freak, or The Pokémon Company. Pokémon and all related names are trademarks of Nintendo/Game Freak.
       </footer>
     </div>

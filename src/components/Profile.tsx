@@ -58,7 +58,7 @@ export default function Profile({ streak: streakProp }: Props) {
         </svg>
       </button>
       {open && (
-        <div style={{ position: 'absolute', right: 0, zIndex: 10, borderRadius: 12, padding: '24px 20px', width: 140, background: '#1e1e2e', color: '#fff', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+        <div style={{ position: 'absolute', right: 0, zIndex: 10, borderRadius: 12, padding: '24px 20px', width: 140, background: 'var(--card-bg)', color: 'var(--card-text)', border: '1px solid var(--border)', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
           {loggedIn && (
             stats || streakProp !== undefined ? (
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
@@ -66,13 +66,13 @@ export default function Profile({ streak: streakProp }: Props) {
                 <span style={{ fontSize: 24, fontWeight: 700 }}>{streakProp ?? stats?.streak}</span>
               </div>
             ) : (
-              <p style={{ margin: 0, color: '#aaa' }}>Loading...</p>
+              <p style={{ margin: 0, color: 'var(--text-muted)' }}>Loading...</p>
             )
           )}
           {loggedIn ? (
-            <button onClick={handleLogout} style={{ background: 'none', border: '1px solid #444', color: '#fff', borderRadius: 8, padding: '6px 12px', cursor: 'pointer', fontSize: 14 }}>Logout</button>
+            <button onClick={handleLogout} style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--card-text)', borderRadius: 8, padding: '6px 12px', cursor: 'pointer', fontSize: 14 }}>Logout</button>
           ) : (
-            <button onClick={() => navigate('/login')} style={{ background: `var(--accent)`, border: 'none', color: '#fff', borderRadius: 8, padding: '6px 12px', cursor: 'pointer', fontSize: 14 }}>Login</button>
+            <button onClick={() => navigate('/login')} style={{ background: 'var(--accent)', border: 'none', color: '#fff', borderRadius: 8, padding: '6px 12px', cursor: 'pointer', fontSize: 14 }}>Login</button>
           )}
         </div>
       )}

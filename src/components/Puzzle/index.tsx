@@ -169,7 +169,7 @@ export default function Puzzle({ onSolve }: Props) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, maxWidth: 900, width: '100%', padding: '0 24px', boxSizing: 'border-box' }}>
-      <p style={{ margin: 0, fontSize: 18, color: '#6b6375' }}>Which Pokémon doesn't belong?</p>
+      <p style={{ margin: 0, fontSize: 18, color: 'var(--text-muted)' }}>Which Pokémon doesn't belong?</p>
       {theme && <h2 style={{ margin: 0 }}>{theme}</h2>}
       <div className={`puzzle-grid cols-${cols}`}>
         {puzzle.choices?.map(choice => (

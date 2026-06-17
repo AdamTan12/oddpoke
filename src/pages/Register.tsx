@@ -30,62 +30,46 @@ export default function Register() {
     setLoading(false);
   }
 
+  const inputStyle = { padding: '10px 14px', borderRadius: 8, border: '1.5px solid var(--input-border)', background: 'var(--input-bg)', color: 'var(--input-text)', fontSize: 15, outline: 'none', boxSizing: 'border-box' as const, width: '100%' };
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ width: '100%', maxWidth: 380, display: 'flex', flexDirection: 'column', gap: 24 }}>
         <div style={{ textAlign: 'center' }}>
           <h1 style={{ margin: '0 0 4px', fontSize: 32 }}>oddpokdle</h1>
-          <p style={{ margin: 0, color: '#6b6375' }}>Create an account to track your streak</p>
+          <p style={{ margin: 0, color: 'var(--text-muted)' }}>Create an account to track your streak</p>
         </div>
         <button
           onClick={handleGoogle}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, padding: '11px', borderRadius: 8, border: '1.5px solid #e5e4e7', background: '#fff', color: '#111', fontSize: 15, fontWeight: 500, cursor: 'pointer', width: '100%' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, padding: '11px', borderRadius: 8, border: '1.5px solid var(--input-border)', background: 'var(--input-bg)', color: 'var(--input-text)', fontSize: 15, fontWeight: 500, cursor: 'pointer', width: '100%' }}
         >
           <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width={18} height={18} />
           Continue with Google
         </button>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ flex: 1, height: 1, background: '#e5e4e7' }} />
-          <span style={{ fontSize: 13, color: '#9ca3af' }}>or</span>
-          <div style={{ flex: 1, height: 1, background: '#e5e4e7' }} />
+          <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
+          <span style={{ fontSize: 13, color: 'var(--text-subtle)' }}>or</span>
+          <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
         </div>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <label htmlFor="email" style={{ fontSize: 14, fontWeight: 600 }}>Email</label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e5e4e7', fontSize: 15, outline: 'none', boxSizing: 'border-box', width: '100%' }}
-            />
+            <input id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} required style={inputStyle} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <label htmlFor="password" style={{ fontSize: 14, fontWeight: 600 }}>Password</label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              required
-              style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e5e4e7', fontSize: 15, outline: 'none', boxSizing: 'border-box', width: '100%' }}
-            />
+            <input id="password" type="password" value={password} onChange={e => setPassword(e.target.value)} required style={inputStyle} />
           </div>
-          {error && <p style={{ margin: 0, color: '#ef4444', fontSize: 14 }}>{error}</p>}
-          <button
-            type="submit"
-            disabled={loading}
-            style={{ padding: '12px', borderRadius: 8, border: 'none', background: `var(--accent)`, color: '#fff', fontSize: 16, fontWeight: 600, cursor: loading ? 'default' : 'pointer', opacity: loading ? 0.7 : 1 }}
-          >
+          {error && <p style={{ margin: 0, color: 'var(--error)', fontSize: 14 }}>{error}</p>}
+          <button type="submit" disabled={loading} style={{ padding: '12px', borderRadius: 8, border: 'none', background: 'var(--accent)', color: '#fff', fontSize: 16, fontWeight: 600, cursor: loading ? 'default' : 'pointer', opacity: loading ? 0.7 : 1 }}>
             {loading ? 'Creating account...' : 'Register'}
           </button>
         </form>
-        <p style={{ margin: 0, textAlign: 'center', fontSize: 14, color: '#6b6375' }}>
-          Already have an account? <Link to="/login" style={{ color: `var(--accent)`, fontWeight: 600 }}>Login</Link>
+        <p style={{ margin: 0, textAlign: 'center', fontSize: 14, color: 'var(--text-muted)' }}>
+          Already have an account? <Link to="/login" style={{ color: 'var(--accent)', fontWeight: 600 }}>Login</Link>
         </p>
         <p style={{ margin: 0, textAlign: 'center', fontSize: 14 }}>
-          <Link to="/" style={{ color: '#6b6375' }}>Just want to play? Continue without an account →</Link>
+          <Link to="/" style={{ color: 'var(--text-muted)' }}>Just want to play? Continue without an account →</Link>
         </p>
       </div>
     </div>

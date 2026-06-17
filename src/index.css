@@ -8,6 +8,14 @@
   --accent-bg: rgba(29, 106, 150, 0.08);
   --accent-border: rgba(29, 106, 150, 0.4);
   --social-bg: rgba(240, 247, 253, 0.5);
+  --text-muted: #6b7280;
+  --text-subtle: #9ca3af;
+  --card-bg: #ffffff;
+  --card-text: #111827;
+  --input-border: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-text: #111827;
+  --error: #ef4444;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -31,7 +39,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
@@ -41,6 +49,14 @@
     --accent-bg: rgba(58, 159, 213, 0.15);
     --accent-border: rgba(58, 159, 213, 0.5);
     --social-bg: rgba(30, 50, 70, 0.5);
+    --text-muted: #9ca3af;
+    --text-subtle: #6b7280;
+    --card-bg: #0f172a;
+    --card-text: #f1f5f9;
+    --input-border: #374151;
+    --input-bg: #1f2937;
+    --input-text: #f9fafb;
+    --error: #f87171;
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
@@ -48,6 +64,50 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
+}
+
+:root[data-theme="dark"] {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  --accent: #3a9fd5;
+  --accent-bg: rgba(58, 159, 213, 0.15);
+  --accent-border: rgba(58, 159, 213, 0.5);
+  --social-bg: rgba(30, 50, 70, 0.5);
+  --text-muted: #9ca3af;
+  --text-subtle: #6b7280;
+  --card-bg: #0f172a;
+  --card-text: #f1f5f9;
+  --input-border: #374151;
+  --input-bg: #1f2937;
+  --input-text: #f9fafb;
+  --error: #f87171;
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --text: #374151;
+  --text-h: #111827;
+  --bg: #f9fafb;
+  --border: #e5e7eb;
+  --code-bg: #f3f4f6;
+  --accent: #1d6a96;
+  --accent-bg: rgba(29, 106, 150, 0.08);
+  --accent-border: rgba(29, 106, 150, 0.4);
+  --social-bg: rgba(240, 247, 253, 0.5);
+  --text-muted: #6b7280;
+  --text-subtle: #9ca3af;
+  --card-bg: #ffffff;
+  --card-text: #111827;
+  --input-border: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-text: #111827;
+  --error: #ef4444;
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  color-scheme: light;
 }
 
 #root {
